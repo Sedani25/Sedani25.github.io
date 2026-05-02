@@ -235,17 +235,51 @@ section {
     border-radius: 2px;
 }
 
-/* Hero Section - Original structure */
+/* Hero Section - Colorful Background Animations */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     background-color: var(--bg-color);
     position: relative;
+    overflow: hidden;
+}
+
+/* Dynamic Colorful Background Shapes */
+.hero::before, .hero::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+    opacity: 0.15;
+    animation: backgroundMove 20s infinite alternate ease-in-out;
+}
+
+.hero::before {
+    background: var(--primary-color);
+    top: -150px;
+    right: -150px;
+}
+
+.hero::after {
+    background: var(--secondary-color);
+    bottom: -150px;
+    left: -150px;
+    animation-delay: -10s;
+}
+
+@keyframes backgroundMove {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(150px, 100px) scale(1.2); }
 }
 
 .hero-content {
     max-width: 700px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h2 {
@@ -278,25 +312,6 @@ section {
     color: var(--text-light);
     margin-bottom: 35px;
     max-width: 600px;
-}
-
-.hero-shape {
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.2;
-    z-index: 1;
-    animation: backgroundSwing 10s ease-in-out infinite alternate;
-}
-
-@keyframes backgroundSwing {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(-100px, 50px) rotate(90deg); }
 }
 
 /* Summary Section - Original */
@@ -492,7 +507,7 @@ section {
     border-radius: 50%;
 }
 
-/* --- Animations: ONLY ADDED PART --- */
+/* --- Animations --- */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
