@@ -18,12 +18,10 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Auto-Animation Logic (Scroll-Reveal without HTML changes)
-const initScrollAnimations = () => {
-    // Select sections and cards based on existing structure
+// Simple Scroll Animation Logic
+const initAnimations = () => {
     const sections = document.querySelectorAll('section');
-    const cards = document.querySelectorAll('.project-card, .skill-category, .timeline-item, .achievement-column, .contact-item');
-
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -38,28 +36,19 @@ const initScrollAnimations = () => {
         });
     }, observerOptions);
 
-    // Prepare sections for reveal
     sections.forEach(section => {
-        if (section.id !== 'home') { // Don't hide the hero section
-            section.classList.add('section-reveal');
+        if (section.id !== 'home') {
+            section.classList.add('reveal');
             observer.observe(section);
         }
     });
-
-    // Prepare cards for staggered reveal
-    cards.forEach((card, index) => {
-        card.classList.add('stagger-reveal');
-        // Add a slight delay based on index for items in the same container
-        card.style.transitionDelay = `${(index % 3) * 0.15}s`;
-        observer.observe(card);
-    });
 };
 
-// Initialize everything on load
+// Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
-    initScrollAnimations();
+    initAnimations();
     
-    // Smooth Scroll for Navigation Links
+    // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
