@@ -21,7 +21,7 @@ window.addEventListener('scroll', () => {
 // Simple Scroll Animation Logic
 const initAnimations = () => {
     const sections = document.querySelectorAll('section');
-    
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -42,14 +42,6 @@ const initAnimations = () => {
             observer.observe(section);
         }
     });
-
-    // Click-to-Zoom logic for Summary Box
-    const summaryBox = document.querySelector('.summary-content');
-    if (summaryBox) {
-        summaryBox.addEventListener('click', () => {
-            summaryBox.classList.toggle('zoomed');
-        });
-    }
 };
 
 // --- Live Background Animation (Particles) ---
@@ -131,7 +123,7 @@ const initLiveBackground = () => {
 document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
     initLiveBackground();
-    
+
     // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -145,4 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Click-to-Zoom logic for Summary Box
+    const summaryBox = document.querySelector('.summary-content');
+    if (summaryBox) {
+        summaryBox.addEventListener('click', () => {
+            summaryBox.classList.toggle('zoomed');
+        });
+    }
 });
