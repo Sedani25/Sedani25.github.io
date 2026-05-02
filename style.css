@@ -311,7 +311,7 @@ section {
 
 .summary-content:hover {
     background-color: #1a1a2e; /* Subtle shift like the button */
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     border-color: var(--primary-color);
 }
