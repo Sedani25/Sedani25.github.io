@@ -235,51 +235,19 @@ section {
     border-radius: 2px;
 }
 
-/* Hero Section - Colorful Background Animations */
+/* Hero Section - Original structure */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     background-color: var(--bg-color);
     position: relative;
-    overflow: hidden;
-}
-
-/* Dynamic Colorful Background Shapes */
-.hero::before, .hero::after {
-    content: '';
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    filter: blur(120px);
-    z-index: 0;
-    opacity: 0.15;
-    animation: backgroundMove 20s infinite alternate ease-in-out;
-}
-
-.hero::before {
-    background: var(--primary-color);
-    top: -150px;
-    right: -150px;
-}
-
-.hero::after {
-    background: var(--secondary-color);
-    bottom: -150px;
-    left: -150px;
-    animation-delay: -10s;
-}
-
-@keyframes backgroundMove {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(150px, 100px) scale(1.2); }
 }
 
 .hero-content {
     max-width: 700px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content h2 {
@@ -507,7 +475,7 @@ section {
     border-radius: 50%;
 }
 
-/* --- Animations --- */
+/* --- Animations: ONLY ADDED PART --- */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
