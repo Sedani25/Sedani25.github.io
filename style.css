@@ -282,9 +282,19 @@ section {
     max-width: 600px;
 }
 
-/* Summary Section - Original */
+/* Summary Section - Original with Animation */
 .summary {
-    background-color: var(--bg-alt);
+    background: linear-gradient(270deg, var(--bg-alt), #1a1a2e, var(--bg-alt));
+    background-size: 600% 600%;
+    animation: flowingGradient 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes flowingGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .summary-content {
