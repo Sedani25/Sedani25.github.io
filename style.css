@@ -1,6 +1,7 @@
 :root {
     /* Simple Dark Mode Palette */
-    --primary-color: #bb86fc; /* Light purple for dark mode */
+    --primary-color: #bb86fc;
+    /* Light purple for dark mode */
     --primary-light: #d7b7fd;
     --secondary-color: #03dac6;
     --text-color: #f1f1f1;
@@ -9,11 +10,11 @@
     --bg-alt: #1e1e1e;
     --white: #ffffff;
     --black: #000000;
-    
+
     /* Typography - Original */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     /* Spacing & Layout - Original */
     --section-padding: 100px 0;
     --container-width: 1100px;
@@ -39,7 +40,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     color: var(--primary-color);
@@ -240,12 +246,6 @@ section {
 
 .hero-content {
     max-width: 700px;
-    animation: swing 6s ease-in-out infinite alternate;
-}
-
-@keyframes swing {
-    0% { transform: rotate(-2deg) translateY(0); }
-    100% { transform: rotate(2deg) translateY(-10px); }
 }
 
 .hero-content h2 {
@@ -278,6 +278,25 @@ section {
     color: var(--text-light);
     margin-bottom: 35px;
     max-width: 600px;
+}
+
+.hero-shape {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
+    z-index: 1;
+    animation: backgroundSwing 10s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundSwing {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(-100px, 50px) rotate(90deg); }
 }
 
 /* Summary Section - Original */
@@ -498,16 +517,41 @@ section {
     }
 }
 
-.hero-content h2 { animation-delay: 0.2s; }
-.hero-content h1 { animation-delay: 0.4s; }
-.role { animation-delay: 0.6s; }
-.hero-desc { animation-delay: 0.8s; }
-.hero-btns { animation-delay: 1s; }
+.hero-content h2 {
+    animation-delay: 0.2s;
+}
+
+.hero-content h1 {
+    animation-delay: 0.4s;
+}
+
+.role {
+    animation-delay: 0.6s;
+}
+
+.hero-desc {
+    animation-delay: 0.8s;
+}
+
+.hero-btns {
+    animation-delay: 1s;
+}
 
 /* Responsive - Original */
 @media (max-width: 768px) {
-    .hero-content h1 { font-size: 3rem; }
-    .role { font-size: 1.4rem; }
-    .nav-toggle { display: block; }
-    .nav-links { display: none; }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .role {
+        font-size: 1.4rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
 }
