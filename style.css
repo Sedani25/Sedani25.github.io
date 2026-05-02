@@ -321,6 +321,12 @@ section {
     box-shadow: 0 20px 50px rgba(187, 134, 252, 0.2);
 }
 
+.summary-content.zoomed {
+    transform: scale(1.15) !important;
+    box-shadow: 0 30px 60px rgba(187, 134, 252, 0.3);
+    border: 1px solid var(--primary-color);
+}
+
 .summary-content p {
     font-size: 1.15rem;
     line-height: 1.8;

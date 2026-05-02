@@ -42,6 +42,14 @@ const initAnimations = () => {
             observer.observe(section);
         }
     });
+
+    // Click-to-Zoom logic for Summary Box
+    const summaryBox = document.querySelector('.summary-content');
+    if (summaryBox) {
+        summaryBox.addEventListener('click', () => {
+            summaryBox.classList.toggle('zoomed');
+        });
+    }
 };
 
 // --- Live Background Animation (Particles) ---
