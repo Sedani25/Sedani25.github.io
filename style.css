@@ -301,29 +301,19 @@ section {
     max-width: 850px;
     margin: 0 auto;
     text-align: center;
-    padding: 50px;
-    position: relative;
-    z-index: 1;
-}
-
-/* The "Black Box" that zooms independently */
-.summary-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: var(--bg-color);
+    padding: 50px;
     border-radius: var(--border-radius);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    z-index: -1;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    transition: var(--transition);
+    cursor: pointer;
 }
 
-.summary-content:hover::before {
-    transform: scale(1.1);
-    box-shadow: 0 20px 50px rgba(187, 134, 252, 0.2);
+.summary-content:hover {
+    background-color: #1a1a2e; /* Subtle shift like the button */
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border-color: var(--primary-color);
 }
 
 .summary-content p {
