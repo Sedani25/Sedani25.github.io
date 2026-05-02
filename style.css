@@ -310,10 +310,10 @@ section {
 }
 
 .summary-content:hover {
-    background-color: #1a1a2e; /* Subtle shift like the button */
+    background-color: #161625; 
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(187, 134, 252, 0.15);
+    border: 1px solid var(--primary-color);
 }
 
 .summary-content p {
