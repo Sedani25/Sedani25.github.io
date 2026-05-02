@@ -292,9 +292,17 @@ section {
 }
 
 @keyframes flowingGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .summary-content {
@@ -306,17 +314,17 @@ section {
     border-radius: var(--border-radius);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(187, 134, 252, 0.1);
+    animation: boxZoom 8s ease-in-out infinite alternate;
     transition: var(--transition);
-    animation: boxPulse 8s ease-in-out infinite alternate;
 }
 
-@keyframes boxPulse {
-    0% { border-color: rgba(187, 134, 252, 0.1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
-    100% { border-color: rgba(187, 134, 252, 0.4); box-shadow: 0 10px 40px rgba(187, 134, 252, 0.1); }
+@keyframes boxZoom {
+    0% { transform: scale(1); border-color: rgba(187, 134, 252, 0.1); }
+    100% { transform: scale(1.03); border-color: rgba(187, 134, 252, 0.5); box-shadow: 0 15px 45px rgba(187, 134, 252, 0.15); }
 }
 
 .summary-content:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
     border-color: var(--primary-color);
 }
 
